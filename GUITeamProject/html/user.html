@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Username</title>
+	<link rel="icon" href="https://image.flaticon.com/icons/svg/27/27501.svg"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../public/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="..//public/css/profile.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="..//public/js/javascript.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a href="#" class="navbar-brand">Axis Prisoners of War</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div id="collapsibleNavbar" class="collapse navbar-collapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Map</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Camps</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Prisoners</a></li>
+			</ul>
+			<ul class="navbar-nav">
+					<li>
+						<div class="mr-3"><span class="navbar-text d-none d-md-block">Hello, admin</span></div>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+			</ul>
+		</div>
+	</nav> <!-- End of nav -->
+
+	<div class="container-fluid px-0 main-content">
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ul class="breadcrumb bg-white">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item"><a href="#">Users</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Username</li>
+				</ul>
+			</nav> <!-- End of breadcrumb -->
+		</div>
+		<div class="container">
+			<div class="row profile">
+				<div class="col-md-3">
+					<div class="profile-sidebar mb-5">
+						<div class="profile-person-pic">
+							<img class="img-fluid rounded-circle" src="../public/img/profile-img.jpg" alt="Default user image">
+						</div>
+						<div class="profile-person-title">
+							<div class="profile-person-name">
+								Username
+							</div>
+							<div class="profile-person-secondary">
+								First Last <!-- If user's permission disallows, do not show/fill -->
+							</div>
+						</div>
+						<div class="profile-person-buttons">
+							<button class="btn btn-success" id="followUser">Follow</button>
+							<button class="btn btn-primary" id="shareUser" type="button" data-toggle="collapse" data-target="#share-group" aria-expanded="false" aria-controls="share-group">Share</button>
+							<div id="share-group" class="collapse share-group mt-3">
+								<a href="#"><i class="fab fa-facebook"></i></a>
+								<a href="#"><i class="fab fa-twitter"></i></a>
+								<a href="#"><i class="fab fa-reddit"></i></a>
+							</div>
+						</div>
+						<div class="profile-person-menu">
+							<ul class="nav flex-column">
+								<li><a class="dropdown-toggle ml-4" data-toggle="collapse" href="#rank-collapse" role="button" aria-expanded="true" aria-controls="rank-collapse"><i class="fas fa-user"></i> Rank</a></li>
+								<li class="side-menu-p ml-4">
+									<div id="rank-collapse" class="collapse">
+										<p id="rc-content">
+											<!--> Should load in string based on rank, not hard coded <!-->
+											Registered User
+										</p>
+										<a href="#" id="promote-btn" class="btn btn-success" role="button">Promote</a>
+										<a href="#" id="demote-btn" class="btn btn-danger" role="button">Demote</a>
+									</div>
+								</li>
+								<li><a class="dropdown-toggle ml-4" data-toggle="collapse" href="#info-collapse" role="button" aria-expanded="true" aria-controls="info-collapse"><i class="fas fa-info-circle"></i> Information</a></li>
+								<li>
+									<div id="info-collapse" class="collapse">
+										<p class="side-menu-p ml-4">
+											Date of Birth: 2018-04-02<br>
+											Gender: Male<br>
+											Email: fake@example.com
+										</p>
+									</div>
+								</li>
+								<li><a class="ml-4" href="#"><i class="fas fa-users"></i> Followers</a></li>
+								<li class="mb-3"><a class="ml-4" href="#"><i class="fas fa-address-book"></i> Following</a></li>
+								<li><a class="ml-4" href="#"><i class="fas fa-cogs"></i> User Settings</a></li>
+								<li><a class="ml-4 dropdown-toggle ml-4" data-toggle="collapse" href="#report-collapse" role="button" aria-expanded="true" aria-controls="report-collapse"><i class="fas fa-flag"></i> Report</a></li>
+								<!-- Hide report-buttons if user clicks yes, and remove d-none class from element below-->
+								<p class="side-menu-p ml-4 d-none">User has been reported.</p>
+								<li class="side-menu-p ml-4">
+									<div id="report-collapse" class="collapse">
+										<!--Needs to set action and method, and redirect?!-->
+										<form id="reportUser" action="" method="">
+											<label>
+												Are you sure you want to report this person?
+											</label>
+											<textarea class="form-control min-h-100" placeholder="Reason for reporting" id="reasonForReporting"></textarea>
+											<div id="report-buttons">
+												<input type="submit" class="btn btn-danger text-uppercase" data-toggle="collapse" data-target="#report-collapse" aria-expanded="false" aria-controls="report-collapse" value="Yes">
+												<input type="button" class="btn btn-success text-uppercase" data-toggle="collapse" data-target="#report-collapse" aria-expanded="false" aria-controls="report-collapse" value="No">
+											</div>
+										</form>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div> <!-- End of sidebar container -->
+				<div class="col-md-9">
+					<div class="about-container" class="mb-4">
+						<h3>About</h3>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt neque eros, ut aliquet magna pulvinar non. Mauris venenatis sodales ipsum sed rhoncus. In rutrum consequat nunc, nec cursus lectus porttitor vitae. Maecenas sed metus mi. Nullam in bibendum tellus. Mauris sed varius ligula, sed lacinia sapien. Nulla non enim urna.
+						</p>
+					</div>
+
+					<div id="activity-feed-div" class="mb-4">
+						<div class="title-box">
+							<h3>Activity Feed</h3>
+						</div>
+						<div id="activity-box" class="message-box border-1-s border-gray h-300">
+							<ul id="activity-list">
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												[2018-04-02] You edited <a href="#">Camp Aliceville</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												[2018-04-01] You edited <a href="#">Camp Atterbury</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												[2018-03-28] You edited <a href="#">Camp Allen</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												[2018-04-20] You edited <a href="#">Camp ingNoob</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-main">
+											<p class="message-text">
+												Low effort activity message
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a message -->
+							</ul>
+						</div>
+					</div> <!-- End of activity-feed-div -->
+
+					<div id="comments-div" class="mb-4">
+						<div class="title-box">
+							<h3>Comments</h3>
+						</div>
+						<div id="comment-box" class="message-box border-1-s border-gray h-300 mb-3">
+							<ul id="comments-list>
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-user-img">
+											<img class="img rounded-circle h-30" src="../public/img/profile-img.jpg" alt="Default user image">
+										</div>
+										<div class="message-main">
+											<a href="#!" class="message-user">
+												Username
+											</a>
+											<p class="message-text">
+												This is a sample comment.  This is a sample comment. This is a sample comment.
+												<br><a href="#" class="message-footer">Delete</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a comment -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-user-img">
+											<img class="img rounded-circle h-30" src="../public/img/profile-img.jpg" alt="Default user image">
+										</div>
+										<div class="message-main">
+											<a href="#!" class="message-user">
+												Username
+											</a>
+											<p class="message-text">
+												This is a sample comment.  This is a sample comment. This is a sample comment.
+												<br><a href="#" class="message-footer">Delete</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a comment -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-user-img">
+											<img class="img rounded-circle h-30" src="../public/img/profile-img.jpg" alt="Default user image">
+										</div>
+										<div class="message-main">
+											<a href="#!" class="message-user">
+												Username
+											</a>
+											<p class="message-text">
+												This is a sample comment.  This is a sample comment. This is a sample comment.
+												<br><a href="#" class="message-footer">Delete</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a comment -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-user-img">
+											<img class="img rounded-circle h-30" src="../public/img/profile-img.jpg" alt="Default user image">
+										</div>
+										<div class="message-main">
+											<a href="#!" class="message-user">
+												Username
+											</a>
+											<p class="message-text">
+												This is a sample comment.  This is a sample comment. This is a sample comment.
+												<br><a href="#" class="message-footer">Delete</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a comment -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-user-img">
+											<img class="img rounded-circle h-30" src="../public/img/profile-img.jpg" alt="Default user image">
+										</div>
+										<div class="message-main">
+											<a href="#!" class="message-user">
+												Username
+											</a>
+											<p class="message-text">
+												This is a sample comment.  This is a sample comment. This is a sample comment.
+												<br><a href="#" class="message-footer">Delete</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a comment -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-user-img">
+											<img class="img rounded-circle h-30" src="../public/img/profile-img.jpg" alt="Default user image">
+										</div>
+										<div class="message-main">
+											<a href="#!" class="message-user">
+												Username
+											</a>
+											<p class="message-text">
+												This is a sample comment.  This is a sample comment. This is a sample comment.
+												<br><a href="#" class="message-footer">Delete</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a comment -->
+								<li class="mb-3">
+									<div class="message">
+										<div class="message-user-img">
+											<img class="img rounded-circle h-30" src="../public/img/profile-img.jpg" alt="Default user image">
+										</div>
+										<div class="message-main">
+											<a href="#!" class="message-user">
+												Username
+											</a>
+											<p class="message-text">
+												This is a sample comment.  This is a sample comment. This is a sample comment.
+												<br><a href="#" class="message-footer">Delete</a>
+											</p>
+										</div>
+									</div>
+								</li> <!-- End of a comment -->
+							</ul> <!-- End of comments list -->
+						</div>
+						<div>
+							<form id="comment-form">
+								<input type="text" name="comment" class="form-control mb-2" placeholder="Enter comment here">
+								<input type="submit" class="btn btn-success" value="Comment">
+							</form>
+						</div>
+					</div> <!-- End of comments-div -->
+
+				</div>
+			</div>
+		</div>
+	</div> <!-- End of container-fluid -->
+
+	<footer id="footer" class="page-footer bg-dark text-white">
+		<div class="container">
+			<div class="row text-center justify-content-center pt-4 mb-3">
+				<div class="col-md-2 mb-3">
+							<h6 class="text-uppercase font-weight-bold">
+									<a href="#">Back To Top</a>
+							</h6>
+						</div>
+						<div class="col-md-2 mb-3">
+							<h6 class="text-uppercase font-weight-bold">
+									<a href="#!">About Us</a>
+							</h6>
+						</div>
+						<div class="col-md-2 mb-3">
+							<h6 class="text-uppercase font-weight-bold">
+									<a href="#!">Contact</a>
+							</h6>
+						</div>
+			</div>
+			<hr class="bg-white">
+			<div class="row text-center justify-content-center mb-md-0 mb-5">
+				<!--div class="col-md-8 col-12 mt-4"-->
+					<div class="col-xs-12 col-md-4">
+						<p>
+									"I've always had the desire to learn about Axis prisoners of war in the United States, but couldn't find any good website to read from. I was so happy when I found this website, it's perfect."<br> - Anonymous
+								</p>
+					</div>
+							<div class="col-xs-12 col-md-4">
+						<p>
+									"Your one stop shop for Axis prisoners of war in the United States. Helped me get an A on a project in one of my college courses."<br> - Anonymous
+								</p>
+					</div>
+						<!--/div-->
+			</div>
+			<div class="footer-copyright py-3 text-center">
+				&copy; 2018 VT CS3744
+			</div>
+		</div>
+	</footer> <!-- End of footer-->
+</body>
+</html>

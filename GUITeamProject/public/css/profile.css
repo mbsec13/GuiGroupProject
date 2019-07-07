@@ -1,0 +1,68 @@
+/*Space person's profile*/
+.profile {
+	margin: 20px 0;
+}
+/*Style profile sidebar*/
+.profile-sidebar {
+	padding: 20px 0 10px 0;
+	background: #d4d4d4;
+}
+/*Style profile picture*/
+.profile-person-pic {
+	float: none;
+	margin: 0 auto;
+	width: 50%;
+	height: 50%;
+}
+/*Style profile title container*/
+.profile-person-title {
+	text-align: center;
+	margin-top: 20px;
+}
+/*Style person's name*/
+.profile-person-name {
+	color: #5a73a1;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 7px;
+}
+/*Style person's secondary title*/
+.profile-person-secondary {
+	text-transform: uppercase;
+	color: #5babd1;
+	font-size: 13px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+/*Style sidebar button containers*/
+.profile-person-buttons {
+	text-align: center;
+	margin-top: 10px;
+}
+/*Style sidebar links container*/
+.profile-person-menu {
+	margin-top: 30px;
+}
+/*Style side menu collapsables and links*/
+.profile-person-menu ul li a {
+	/*color: #93a3b5;*/
+	font-size: 14px;
+}
+/*Style side menu links on hover*/
+.profile-person-menu ul li a:hover {
+	color: #5babd1;
+}
+/*Add padding to profile's large text container*/
+.profile-content {
+	padding: 20px;
+}
+/*Size share group icons*/
+.share-group a {
+	font-size: 32px;
+}
+/*Style side menu p text*/
+.side-menu-p {
+	font-size: 14px;
+	padding-bottom: 0;
+	margin-bottom: 5px;
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Search</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../public/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/profile.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a href="#" class="navbar-brand">Logo</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div id="collapsibleNavbar" class="collapse navbar-collapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="">Map</a></li>
+				<li class="nav-item"><a class="nav-link" href="">Search</a></li>
+			</ul>
+			<ul class="navbar-nav">
+				<li>
+					<div class="mr-3"><span class="navbar-text d-none d-md-block">Hello, Logged In User</span></div>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="">Login</a></li>
+				<li class="nav-item"><a class="nav-link" href="">Signup</a></li>
+			</ul>
+		</div>
+	</nav> <!-- End of nav -->
+
+	<div class="container-fluid px-0 main-content">
+		<div class="container mt-5">
+
+			<!--
+				Existing Camp Dialog (This shows when user clicks on marker on map)
+
+				NOTES:
+				Close button (x) closes/removes dialog
+				Toggle display or remove/add hidden class to editCampForm on Quick Edit button click
+				Process delete from camp dialog with Ajax
+			-->
+			<div class="card position-absolute" style="width: 18rem;">
+				<div class="card-header">
+					<h5 class="d-inline-block">Camp Info</h5>
+					<span id="quickCreateClose" class="btn-close float-right d-inline-block"><i class="far fa-times-circle"></i></span>
+				</div>
+				<div class="default-view">
+					<img class="card-img-top" src="../public/img/default-camp.jpg" alt="Camp image">
+					<div class="card-body">
+						<h5 class="card-title">Camp Name</h5>
+						<p class="card-text">Location<br>Camp Purpose</p>
+					</div>
+				</div>
+				<div class="container">
+					<form id="editCampForm" class="hidden">
+						<input id="newImageURL" type="text" name="newImageURL" class="form-control" placeholder="Camp Image URL">
+						<input id="newName" type="text" name="newName" class="form-control" placeholder="Camp Name">
+						<input id="newLocation" type="text" name="newLocation" class="form-control" placeholder="Location">
+						<input id="newPurpose" type="text" name="newPurpose" class="form-control" placeholder="Camp Purpose">
+					</form>
+				</div>
+				<div class="card-footer text-muted">
+						<a href="#!" class="btn btn-primary w-100 mb-2">View</a>
+						<button class="btn btn-success w-100 mb-2">Quick Edit</button>
+						<button class="btn btn-danger w-100 mb-2" data-toggle="collapse" data-target="#camp-delete" aria-expanded="false" aria-controls="camp-delete">Delete Camp</button>
+						<div id="camp-delete" class="collapse text-center">
+							<span>Are you sure you want to delete this camp?<br></span>
+							<button id="deleteYes" type="submit" class="btn btn-danger text-uppercase" data-toggle="collapse" data-target="#camp-delete" aria-expanded="false" aria-controls="camp-delete">Yes</button>
+							<button id="deleteNo" type="button" class="btn btn-success text-uppercase" data-toggle="collapse" data-target="#camp-delete" aria-expanded="false" aria-controls="camp-delete">No</button>
+						</div>
+					</div> <!-- End of card-footer -->
+			</div> <!-- End of existing camp dialog -->
+
+
+			<div class="mt-5">
+				<!-- Ignore this, it's just for spacing -->
+			</div>
+
+			<!--
+				Create Camp Dialog (This shows when user clicks on nonmarker on map)
+
+				NOTES:
+				Close button (x) closes/removes dialog
+				'Create Camp' button creates the camp
+				'Cancel' button closes/removes dialog
+
+				Specify location with left and right property. The current left and right value is so
+				you can see both dialogs at the same time.
+			-->
+			<div id="quickCreateCampDiv" class="card position-absolute" style="width: 18rem; left: 400px; right: 400px;">
+				<div class="card-header">
+					<h5 class="d-inline-block">Quick Create Camp</h5>
+					<span id="quickCreateClose" class="btn-close float-right d-inline-block"><i class="far fa-times-circle"></i></span>
+				</div>
+				<div class="container">
+					<form id="editCampForm">
+						<input id="newName" type="text" name="newName" class="form-control mt-2 mb-2" placeholder="Camp Name">
+						<input id="newLocation" type="text" name="newLocation" class="form-control mb-2" placeholder="Location">
+						<textarea id="newPurpose" type="text" name="newPurpose" class="form-control mb-2 min-h-100" placeholder="Camp Purpose"></textarea>
+					</form>
+				</div>
+				
+				<div class="card-footer text-muted">
+					<button id="quickCreate" class="btn btn-success w-100 mb-2">Create Camp</button>
+					<button id="cancelCreation" class="btn btn-danger w-100 mb-2">Cancel</button>
+				</div> <!-- End of card-footer -->
+			</div> <!-- End of existing camp dialog -->
+		</div>
+		
+	</div> <!-- End of container-fluid -->
+
+	<footer id="footer" class="page-footer bg-dark text-white">
+		<div class="container">
+			<div class="row text-center justify-content-center pt-4 mb-3">
+				<div class="col-md-2 mb-3">
+        			<h6 class="text-uppercase font-weight-bold">
+          				<a href="#">Back To Top</a>
+        			</h6>
+      			</div>
+      			<div class="col-md-2 mb-3">
+        			<h6 class="text-uppercase font-weight-bold">
+          				<a href="#!">About Us</a>
+        			</h6>
+      			</div>
+      			<div class="col-md-2 mb-3">
+        			<h6 class="text-uppercase font-weight-bold">
+          				<a href="#!">Contact</a>
+        			</h6>
+      			</div>
+			</div>
+			<hr class="bg-white">
+			<div class="row text-center justify-content-center mb-md-0 mb-5">
+				<!--div class="col-md-8 col-12 mt-4"-->
+					<div class="col-xs-12 col-md-4">
+						<p>
+        					"I've always had the desire to learn about Axis prisoners of war in the United States, but couldn't find any good website to read from. I was so happy when I found this website, it's perfect."<br> - Anonymous
+      					</p>
+					</div>
+        			<div class="col-xs-12 col-md-4">
+						<p>
+        					"Your one stop shop for Axis prisoners of war in the United States. Helped me get an A on a project in one of my college courses."<br> - Anonymous
+      					</p>
+					</div>
+      			<!--/div-->
+			</div>
+			<div class="footer-copyright py-3 text-center">
+				&copy; 2018 VT CS3744
+			</div>
+		</div>
+	</footer> <!-- End of footer-->
+</body>
+</html>

@@ -1,0 +1,305 @@
+/*===============================================
+				Page Setup
+================================================*/
+/*Set web application font family to Roboto*/
+body {
+	font-family: Roboto, Helvetica, sans-serif !important;
+}
+/*From http://www.mrmcguire.com/10-useful-google-font-combinations-for-your-next-site/*/
+h1 {
+	font-family: 'Alegraya', serif;
+	font-weight: 700;
+    line-height: 46px;
+    font-size: 46px;
+    margin: 0 0 43px 0;
+}
+/*From http://www.mrmcguire.com/10-useful-google-font-combinations-for-your-next-site/*/
+h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 23px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 23px 0;
+}
+/*Set minimum height for page's main content*/
+.main-content {
+	min-height: 100vh;
+}
+/*Add bottom spacing to p elements*/
+.main-content p {
+	margin-bottom: 0;
+	padding-bottom: 1.5em;
+}
+/*===============================================
+					Utility
+	No comments necessary, one-liners or simple
+================================================*/
+.h-450 {
+	height: 450px;
+}
+.h-400 {
+	height: 400px;
+}
+.h-350 {
+	height: 350px;
+}
+.h-300 {
+	height: 300px;
+}
+.h-50px {
+	height: 50px;
+}
+.h-30 {
+	height: 30px;
+}
+.min-h-450 {
+	min-height: 450px;
+}
+.min-h-400 {
+	min-height: 400px;
+}
+.min-h-350 {
+	min-height: 350px;
+}
+.min-h-300 {
+	min-height: 300px;
+}
+.min-h-100 {
+	min-height: 100px;
+}
+.border-gray {
+	border-color: #CBCBCB !important;
+}
+.bg-gray {
+	/*background: #C0C1C1;*/
+}
+.bg-gray {
+	background: #9099a2;
+}
+.border-darkgray {
+	border-color: #2E2E2E;
+}
+.bg-darkgray {
+	background: #2E2E2E;
+}
+.font-size-15 {
+	font-size: 15px;
+}
+.border-1-s {
+	border: 1px solid;
+}
+.btn-round {
+	border-width: 2px;
+	border-radius: 20px;
+}
+.fs-16 {
+	font-size: 16px !important;
+}
+.hidden {
+	display: none !important;
+}
+/*===============================================
+				Image Styling
+================================================*/
+/*Resize (w/o aspect ratio) and center*/
+.no-aspect {
+	object-fit: none;
+	object-position: center;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+/*Resize (w/o aspect ratio) and show top*/
+.no-aspect-t {
+	object-fit: none;
+	object-position: top;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+/*Resize (w/o aspect ratio) and show bottom*/
+.no-aspect-b {
+	object-fit: none;
+	object-position: bottom;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+/*Resize (w/o aspect ratio) and show left*/
+.no-aspect-l {
+	object-fit: none;
+	object-position: left;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+/*Resize (w/o aspect ratio) and show right*/
+.no-aspect-r {
+	object-fit: none;
+	object-position: right;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+/*===============================================
+		Bootstrap Modification and Assoc.
+================================================*/
+/*Styling btns*/
+.btn {
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 6px 15px;
+	margin-right: 5px;
+}
+/*Remove right margin for last btn*/
+.btn:last-child {
+	margin-right: 0;
+}
+/*Resize btn-blocks*/
+.btn-block {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 13px;
+}
+/*Change danger button color on hover*/
+.btn-danger:hover {
+	background-color: #a6323d;
+}
+/*Change cursor on hover of close button*/
+.btn-close:hover {
+	cursor: pointer;
+}
+/*===============================================
+				Camp Styling
+================================================*/
+/*Style card containing main camp info*/
+.camp-card {
+	width: 70%;
+	margin-top: -125px;
+}
+/*===============================================
+				Footer Styling
+================================================*/
+/*Add spacing between lines in footer*/
+#footer p {
+	line-height: 1.7em;
+}
+/*Color divider*/
+#footer hr {
+	margin: 0 15%;
+}
+/*===============================================
+				Search Styling
+================================================*/
+/*Removes border radius on left*/
+.border-radius-nl {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+/*Removes border radius on right*/
+.border-radius-nr {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+/*Left border styling for search item*/
+.bl-solid {
+	border-left: 5px solid !important;
+}
+/*Color left border purple*/
+.bl-purple {
+	border-left-color: #aa66cc !important;
+}
+/*Color left border blue*/
+.bl-blue {
+	border-left-color: #4285F4 !important;
+}
+/*Color left border green*/
+.bl-green {
+	border-left-color: #2BBBAD !important;
+}
+/*Style search items*/
+.search-item {
+	border: 1px solid black;
+	margin-bottom: -1px;
+}
+/*Style search item text*/
+.search-item a {
+	color: black;
+	text-decoration: none;
+}
+/*Resize search item images*/
+.search-item img {
+	height: 50px !important;
+	width: 50px !important;
+}
+/*===============================================
+				Comment Styling
+================================================*/
+/*Style box containing messages*/
+.message-box {
+	padding: 14px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 100%;
+}
+/*Set width of each message in message boxes*/
+.message-box ul li, .message, .message-main {
+	width: 100%;
+}
+/*Cleanup message list*/
+.message-box ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+/*Style message images*/
+.message-user-img {
+	float: left;
+	margin-right: 5px;
+	height: 100%;
+}
+/*Remove bottom padding of message text*/
+.message-text {
+	padding-bottom: 0 !important;
+}
+/*Resize message footer*/
+.message-footer {
+	font-size: 12px;
+}
+/*===============================================
+				Error Page Styling
+================================================*/
+/*Setup container with background image*/
+.error-main-content {
+	display: inline-block;
+	background-image: url('http://stmedia.startribune.com/images/ows_152306592022796.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+/*Reposition 404 heading text*/
+.error-msg-div {
+	margin-top: -3em;
+}
+/*Change "404" heading size*/
+.h1-error {
+	font-size: 10em !important;
+	display: block;
+}
+/*Change "PAGE NOT FOUND" heading size*/
+.h2-pagenotfound {
+	font-size: 3em;
+}
+/*===============================================
+				Card styling
+================================================*/
+/*Add padding to card and box shadow to about us cards*/
+.about-card {
+	padding: 5px;
+	box-shadow: 2px 2px 8px 1px rgba(0,0,0,.2);
+}
+/*Add box shadow to card*/
+.card-shadow {
+	box-shadow: 2px 2px 8px 3px rgba(0,0,0,.2);
+}
+/*Increase box shadow spread on hover*/
+.card-shadow:hover {
+	box-shadow: 2px 2px 8px 5px rgba(0,0,0,.2);
+}

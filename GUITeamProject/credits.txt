@@ -1,0 +1,37 @@
+activity.png
+	Got image from HIST collaborator
+
+index1.png
+	Got image from HIST collaborator
+
+Stock Camp Photo
+	https://www.123rf.com/photo_69466003_stock-vector-secure-facility-prison-camp-vector-illustration-clip-art-image.html
+
+Stock Person Photo
+	https://www.guarddome.com/assets/images/profile-img.jpg
+	
+Amazon EC2
+	https://aws.amazon.com/ec2/?sc_channel=PS&sc_campaign=acquisition_US&sc_publisher=bing&sc_medium=ec2_b&sc_content=ec2_e&sc_detail=amazon%20ec2&sc_category=ec2&sc_segment=71537032722206&sc_matchtype=e&sc_country=US&s_kwcid=AL!4422!10!71537032722206!71537344120746&ef_id=Wjuc2gAAAo8JYUh3:20180418124742:s
+	
+Amazon MTurk
+	https://www.mturk.com/
+
+Bootstrap 
+	https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+	https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
+	https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
+	
+Font Awesome
+	https://fontawesome.com/ 
+
+Font Family
+	https://fonts.googleapis.com/css?family=Roboto
+
+Geocoding API
+	https://developers.google.com/maps/documentation/geocoding/intro
+	
+JQuery
+	https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
+
+Maps JavaScript API
+	https://developers.google.com/maps/documentation/javascript/
